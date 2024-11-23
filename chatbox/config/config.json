@@ -1,0 +1,26 @@
+{
+  "development": {
+    "host": "db",
+    "username": "root",
+    "password": "rootroot",
+    "port": 3306,
+    "database": "tree_huylq",
+    "dialect": "mysql",
+    "timezone": "+07:00",
+    "operatorsAliases": 0
+  },
+  "test": {
+    "username": "root",
+    "password": "rootroot",
+    "database": "tree_huylq",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "rootroot",
+    "database": "tree_huylq",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
