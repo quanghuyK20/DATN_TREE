@@ -1,0 +1,10 @@
+export const ORDER_PLACED = 1
+export const PREPARING_SHIPMENT = 2
+export const OUT_FOR_DELIVERY = 3
+export const SHIPMENT_RECEIVED_SHIPPER = 4
+export const ON_THE_WAY_DELIVERY = 5
+export const SUCCESS_DELIVERED = 6
+export const DELIVERY_FAILED = 7
+export const PENDING = 8 
+export const REFUND = 9 
+export const ORDER_CANCEL = 10

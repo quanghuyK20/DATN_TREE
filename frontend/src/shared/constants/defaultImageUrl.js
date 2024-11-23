@@ -1,0 +1,5 @@
+export const USER_AVATAR = 'images/users/user-default.jpg'
+export const PRODUCT_IMG = 'images/products/product-default.png'
+export const FEEDBACK_IMG = 'images/feedbacks/feedback-default.png'
+export const STORE_IMG = 'images/stores/store-default.png'
+export const VOUCHER_IMG = 'images/vouchers/voucher-default.png'

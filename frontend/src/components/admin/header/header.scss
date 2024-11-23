@@ -1,0 +1,96 @@
+.header-admin {
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    padding: 30px 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+.header-admin-right {
+    height: 100%;
+    width: 20%;
+    float: right;
+    display: flex;
+    align-items: center;
+    &__content {
+        width: fit-content;
+        float: right;
+        display: flex;
+        align-items: center;
+        margin-right: 1vw;
+        &__avatar {
+            margin: 0;
+            border-radius: 50%;
+            width: 2.3vw;
+            height: 2.3vw;
+            margin-right: 1vw;
+        }
+        &__name {
+            font-size: 2vh;
+            margin-right: 1vw;
+            color: #555;
+        }
+        &__role {
+            font-size: 1.5vh;
+            margin-right: 1vw;
+            color: #555;
+        }
+    }
+    &__content:hover {
+        cursor: pointer;
+    }
+}
+
+.header-admin-notification {
+    margin-right: 2vw;
+    font-size: 1rem;
+    align-items: center;
+    &__icon {
+        width: 1.5vw;
+        cursor: pointer;
+    }
+
+    &__unread {
+        position: absolute;
+        background-color: rgba(212, 19, 13, 1);
+        color: #fff;
+        border-radius: 50%;
+        padding: 4px 4px;
+        font: 8px Verdana;
+        height: 15px;
+        line-height: 8px;
+        margin: 0;
+    }
+}
+
+.selected {
+    background-color: #eeeeee;
+}
+
+.ant-dropdown-trigger {
+    color: #555;
+}
+
+.ant-dropdown-icon {
+    color: #41bc3f !important;
+    font-size: 90% !important;
+    margin-right: 1vw;
+}
+.header-admin-menu {
+    background: #fff;
+    margin-top: 0;
+    text-decoration: none;
+    list-style: none;
+    &__link {
+        text-decoration: none;
+        color: #555;
+    }
+    &__link:hover{
+        color: var(--primary-color);
+    }
+}
+
+.ant-dropdown-menu-item-only-child {
+    font-size: 100% !important;
+    margin-top: 6% !important;
+}
