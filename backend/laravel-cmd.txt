@@ -1,0 +1,28 @@
+* Laravel 
+
+php artisan make:model SurveyQuestionAnswer -m
+
+php artisan migrate
+
+php artisan make:controller SurveyController --model=Survey --api --requests : tạo file controller api
+
+php artisan make:resource SurveyResource
+
+composer require spatie/laravel-sluggable
+
+php artisan migrate:refresh : refresh lại migrate
+
+php artisan make:migration add_image_column_to_surveys_table
+
+thêm 1 cột vào table
+
+ php artisan migrate:rollback : render migrate vua thay doi
+
+ php artisan make:request StoreSurveyAnswerRequest : tao file request
+
+php artisan migrate:fresh --seed
+
+//Google service
+
+Cài đặt Socialite:
+- composer require laravel/socialite
