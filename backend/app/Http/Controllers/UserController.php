@@ -154,6 +154,25 @@ class UserController extends Controller
         };
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function getStoreByIdAdmin($id)
+    {
+        try {
+            $users = User::all()->where('id', $id);
+            return response()->json([UserResource::collection($users)], 200);
+        } catch (Exception $e) {
+            return response()->json([
+                'message' => 'Something went wrong!',
+                'error' => $e,
+            ], 500);
+        };
+    }
+
     public function getUserByIdSelf()
     {
 
@@ -258,13 +277,13 @@ class UserController extends Controller
             if (isset($user)) {
                 if ($user['deleted_at'] == 1) {
                     return response()->json([
-                        'message' => 'the user was previously deleted',
+                        'message' => 'Người dùng đã bị xóa trước đó',
                     ], 403);
                 }
                 $input['deleted_at'] = 1;
                 $user->update($input);
                 return response()->json([
-                    'message' => 'deleted successfully',
+                    'message' => 'Xoá người dùng thành công',
                 ], 201);
             } else {
                 return response()->json([

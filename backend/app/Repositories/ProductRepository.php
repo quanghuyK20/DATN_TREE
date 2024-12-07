@@ -95,7 +95,6 @@ class ProductRepository extends Repository implements ProductRepositoryInterface
     }
 
     public function createProduct($newUser){
-        print_r($newUser);
         return Product::create($newUser);
     }
 

@@ -69,6 +69,10 @@ Route::middleware('auth:sanctum')->group(function(){
         Route::get('/user-by-auth',[UserController::class,'getUserByAuth']);
         // Route::post('/users',[UserController::class,'store']);
         Route::get('/user-admin/{id}',[UserController::class,'getUserByIdAdmin']);
+
+        // huy lq adding new logic
+        Route::get('/shop-admin/{id}',[UserController::class,'getStoreByIdAdmin']);
+
         Route::patch('/user-admin/{id}', [UserController::class, 'updateUser']);
         // Route::delete('/delete-by-admin/{id}', [UserController::class, 'destroyUser']);
 
@@ -178,7 +182,6 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::get('/order-status', [OrderStatusController::class, 'index']);
     Route::get('/order-status/{id}', [OrderStatusController::class, 'show']);
 
-
     Route::get('/transports', [TransportController::class, 'index']);
     Route::get('/transports/{id}', [TransportController::class, 'show']);
 
@@ -272,14 +275,14 @@ Route::get('/stores/owner/{id}',[StoreController::class, 'getStoreByOwnerId']);
 //OrderReceiver
 Route::get('/order-receivers',[OrderReceiversController::class,'index']);
 
-
-
+// Login - register
 Route::post('/auth/register', [AuthController::class, 'register']);
 Route::post('/auth/login', [AuthController::class, 'login']);
 Route::post('/auth/login-google', [AuthController::class,'googleLogin']);
 
 Route::get('/auth/get-authenticated-user/{id}',[UserController::class,'getUserByIdAdmin']);
 
+// cart
 Route::get('/carts', [CartController::class, 'index']);
 
 Route::get('/product-categories', [ProductCategoryController::class, 'index']);

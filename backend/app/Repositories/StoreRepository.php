@@ -23,15 +23,15 @@ class StoreRepository extends Repository implements StoreRepositoryInterface
             });
 
         if (isset($params['is_deleted'])) {
-            $stores->where('stores.deleted_at', $params['is_deleted']); 
+            $stores->where('stores.deleted_at', $params['is_deleted']);
         } else {
-            $stores->whereNotNull('stores.deleted_at'); 
+            $stores->whereNotNull('stores.deleted_at');
         }
 
         if (isset($params['verify_state_id'])){
-            $stores->where('stores.verify_state_id', $params['verify_state_id']); 
+            $stores->where('stores.verify_state_id', $params['verify_state_id']);
         } else {
-            $stores->whereNotNull('stores.deleted_at'); 
+            $stores->whereNotNull('stores.deleted_at');
         }
 
         return  $stores->paginate($params['limit']);

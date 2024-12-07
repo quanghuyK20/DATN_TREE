@@ -28,8 +28,8 @@ class OrderStatusController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };   
-       
+        };
+
     }
 
     /**
@@ -44,12 +44,12 @@ class OrderStatusController extends Controller
             $data = $request->validate([
                 'name' => 'required|string|unique:order_statuses',
             ]);
-    
+
             $order_status = OrderStatus::create([
                 'name' => $data['name'],
             ]);
-    
-    
+
+
             return response()->json([
                 'message' => 'Create orderstatus successfully!',
                 'order_status' => $order_status,
@@ -59,8 +59,8 @@ class OrderStatusController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };   
-       
+        };
+
     }
 
     /**
@@ -79,7 +79,7 @@ class OrderStatusController extends Controller
                     'message' => 'OrderStauts not found!',
                 ], 404);
             }
-    
+
             return response()->json([
                 'order_status' => $order_status,
             ]);
@@ -88,8 +88,8 @@ class OrderStatusController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };   
-       
+        };
+
     }
 
     /**
@@ -135,8 +135,8 @@ class OrderStatusController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };   
-        
+        };
+
     }
 
     /**
@@ -152,21 +152,21 @@ class OrderStatusController extends Controller
 
             if ($order_status === null) {
                 return response()->json([
-                    'message' => 'OrderStatus not found!',
+                    'message' => 'Trạng thái đặt hàng lỗi!',
                 ], 404);
             }
-    
+
             OrderStatus::findOrFail($id)->delete();
-    
+
             return response()->json([
-                'message' => 'deleted successfully',
+                'message' => 'Huỷ đặt hàng thành công',
             ], 201);
         }catch(Exception $e){
             return response()->json([
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };   
-       
+        };
+
     }
 }

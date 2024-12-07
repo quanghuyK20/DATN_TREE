@@ -287,17 +287,17 @@ class ProductController extends Controller
             if (isset($product)) {
                 if ($product['deleted_at'] == 1) {
                     return response()->json([
-                        'message' => 'the product was previously deleted',
+                        'message' => 'Mặt hàng đã bị xóa trước đó, vui lòng load lại page',
                     ], 403);
                 }
                 $input['deleted_at'] = 1;
                 $product->update($input);
                 return response()->json([
-                    'message' => 'deleted successfully',
+                    'message' => 'Xoá mặt hàng thành công',
                 ], 201);
             } else {
                 return response()->json([
-                    'message' => 'Product not found!',
+                    'message' => 'Không tìm thấy mặt hàng cần xoá',
                 ], 404);
             }
 
@@ -316,7 +316,7 @@ class ProductController extends Controller
             $productDetail = $this->productDetailRepository->getProductDetailById($id);
             if (!isset($product)) {
                 return response()->json([
-                    'message' => 'Product not found!',
+                    'message' => 'Sản phẩm không tồn tại',
                 ], 404);
 
             }else {
@@ -325,7 +325,7 @@ class ProductController extends Controller
                 }
                 $product->delete();
                 return response()->json([
-                    'message' => 'deleted successfully',
+                    'message' => 'Xoá sản phẩm thành công',
                 ], 201);
             }
         }catch(Exception $e){
