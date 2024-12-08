@@ -72,7 +72,7 @@ class VoucherController extends Controller
     public function createVoucher(VoucherRequest $request){
         try {
 
-            $input = $request->all();    
+            $input = $request->all();
             $input['start_date'] = Carbon::createFromFormat('Y-m-d', $input['start_date']);
             $input['end_date'] = Carbon::createFromFormat('Y-m-d', $input['end_date']);
             $voucher = $this->voucherRepository->createVoucher($input);
@@ -117,12 +117,12 @@ class VoucherController extends Controller
             $voucher = $this->voucherRepository->getVoucherById($id);
             if (!isset($voucher)) {
                 return response()->json([
-                    'message' => 'Feedback not found!',
+                    'message' => 'Voucher not found!',
                 ], 404);
             } else {
                 $voucher->delete($id);
                 return response()->json([
-                    'message' => 'deleted successfully',
+                    'message' => 'Xoá voucher thành công',
                 ], 201);
             }
 

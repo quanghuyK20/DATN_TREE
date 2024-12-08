@@ -36,7 +36,7 @@ class StoreController extends Controller
         $this->storeRepository = $storeRepository;
         $this->followRepository = $followRepository;
     }
-    
+
     public function index(Request $request)
     {
         try {
@@ -71,7 +71,7 @@ class StoreController extends Controller
                 'error' => $e,
             ], 500);
         };
-        
+
     }
 
     public function getListStoreHome(){
@@ -83,7 +83,7 @@ class StoreController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };   
+        };
     }
 
     public function getStoreByOwnerId($ownerId){
@@ -148,7 +148,7 @@ class StoreController extends Controller
             $input['deleted_at'] = 0;
             $ownerId = $input['owner_id'];
             $user = User::find($ownerId);
-            
+
             //Update phone number for account
             if($input['phone_number']){
                 $user->update([
@@ -166,8 +166,8 @@ class StoreController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };   
-       
+        };
+
     }
 
     /**
@@ -187,8 +187,8 @@ class StoreController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };   
-       
+        };
+
     }
 
     /**
@@ -208,18 +208,18 @@ class StoreController extends Controller
                     'message' => 'Store not found!',
                 ], 404);
             }
-    
+
             $input = $request->all();
-    
+
             if ($request->hasFile('avatar')) {
-    
+
                 $destination = $store->avatar;
-    
-    
+
+
                 if (File::exists($destination)) {
                     File::delete($destination);
                 }
-    
+
                 $file = $request->file('avatar');
                 $extention = $file->getClientOriginalExtension();
                 $filename = time() . '.' . $extention;
@@ -227,10 +227,10 @@ class StoreController extends Controller
                 $file->move($destinationPath, $filename);
                 $input['avatar'] = 'images/stores/' . $filename;
             }
-    
-    
+
+
             $store->update($input);
-    
+
             return response()->json([
                 'message' => 'Update store successfully!',
                 'store' => new StoreResource($store),
@@ -240,8 +240,8 @@ class StoreController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };   
-       
+        };
+
     }
 
     /**
@@ -281,8 +281,8 @@ class StoreController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };   
-        
+        };
+
 
     }
 }

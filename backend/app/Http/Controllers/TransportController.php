@@ -28,8 +28,8 @@ class TransportController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };   
-       
+        };
+
     }
 
     /**
@@ -45,7 +45,7 @@ class TransportController extends Controller
             $input = $request->all();
 
             $transport = Transport::create($input);
-    
+
             return  response()->json([
                 'message' => 'Create transport successfully!',
                 'room' => $transport
@@ -56,8 +56,8 @@ class TransportController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };   
-       
+        };
+
     }
 
     /**
@@ -76,7 +76,7 @@ class TransportController extends Controller
                     'message' => 'Transport not found!',
                 ], 404);
             }
-    
+
             return response()->json([
                 'transport' => $transport,
             ]);
@@ -85,8 +85,8 @@ class TransportController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };  
-       
+        };
+
     }
 
     /**
@@ -106,9 +106,9 @@ class TransportController extends Controller
                     'message' => 'Transport not found!',
                 ], 404);
             }
-    
+
             $transport->update($request->all());
-    
+
             return response()->json([
                 'message' => 'Update transport successfully!',
                 'transport' => $transport,
@@ -118,8 +118,8 @@ class TransportController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };  
-       
+        };
+
     }
 
     /**
@@ -130,26 +130,26 @@ class TransportController extends Controller
      */
     public function destroy($id)
     {
-        try{    
+        try{
             $transport = Transport::find($id);
 
             if ($transport === null) {
                 return response()->json([
-                    'message' => 'Transport not found!',
+                    'message' => 'Không tìm thấy thông tin vận chuyển!',
                 ], 404);
             }
-    
+
             Transport::findOrFail($id)->delete();
-    
+
             return response()->json([
-                'message' => 'Deleted successfully!',
+                'message' => 'Đã huỷ thành công!',
             ], 201);
         }catch(Exception $e){
             return response()->json([
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };  
-       
+        };
+
     }
 }

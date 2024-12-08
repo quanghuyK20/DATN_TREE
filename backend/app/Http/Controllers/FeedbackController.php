@@ -80,7 +80,7 @@ class FeedbackController extends Controller
             $feedback = Feedback::create($input);
 
             return response()->json([
-                'message' => 'Created feedback successfully',
+                'message' => 'Feedback đã được tạo thành công',
                 'feedback' => new FeedbackResource($feedback),
             ], 201);
         }catch(Exception $e){
@@ -184,11 +184,11 @@ class FeedbackController extends Controller
             if (isset($feedback)) {
                 $feedback->delete($id);
                 return response()->json([
-                    'message' => 'deleted successfully',
+                    'message' => 'Xoá comment thành công',
                 ], 201);
             } else {
                 return response()->json([
-                    'message' => 'Feedback not found!',
+                    'message' => 'Không tìm thấy comment hợp lệ!',
                 ], 404);
             }
 
