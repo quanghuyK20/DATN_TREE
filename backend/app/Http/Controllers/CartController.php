@@ -27,8 +27,8 @@ class CartController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };  
-      
+        };
+
     }
 
 
@@ -36,14 +36,14 @@ class CartController extends Controller
         try{
             $user_id = Auth::user()->id;
             $carts = Cart::where('user_id', '=', $user_id)->get();
-            return response()->json([CartResource::collection($carts)],200); 
+            return response()->json([CartResource::collection($carts)],200);
         }catch(Exception $e){
             return response()->json([
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };  
-         
+        };
+
     }
 
     /**
@@ -106,8 +106,8 @@ class CartController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };  
-        
+        };
+
     }
 
     public function updateAmountProductToCart(Request $request)
@@ -131,11 +131,11 @@ class CartController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };  
-        
+        };
+
     }
 
-   
+
     /**
      * Update the specified resource in storage.
      *
@@ -149,32 +149,32 @@ class CartController extends Controller
 
             $user = Auth::user();
             $user_id = $user->id;
-    
+
             $product = Cart::select('*')
                 -> where([
                     ['product_id','=', $product_id],
                     ['user_id','=',$user_id]
                 ])->get();
-    
+
             if (count($product) == 0) {
                 return response()->json([
                     'message' => 'Product not found!',
                 ], 404);
             }
-    
+
             Cart::create([
                 'product_id' => $product_id,
                 'user_id' => $user_id
             ]);
-    
+
             $productOfCart = Cart::select('*')
                 -> where([
                     ['product_id','=', $product_id],
                     ['user_id','=',$user_id]
                 ])->get();
-    
+
             $countProduct = count($productOfCart);
-    
+
             return response()->json([
                 'productsOfCart' => $countProduct,
                 'message' => 'Update cart successfully!',
@@ -184,8 +184,8 @@ class CartController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };  
-       
+        };
+
     }
 
     /**
@@ -204,19 +204,19 @@ class CartController extends Controller
                 ['product_id','=', $product_id],
                 ['user_id','=',$user_id]
             ])->get();
-    
+
             if (count($product) == 0) {
                 return response()->json([
                     'message' => 'Not found',
                 ], 404);
             }
-    
+
             $product = Cart::select('*')
             -> where([
                 ['product_id','=', $product_id],
                 ['user_id','=',$user_id]
             ])->delete();
-    
+
             return response()->json([
                 'message' => 'Product removed from cart successfully!',
             ], 201);
@@ -225,7 +225,7 @@ class CartController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };  
-       
+        };
+
     }
 }

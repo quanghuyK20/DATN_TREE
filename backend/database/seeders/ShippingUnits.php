@@ -16,7 +16,7 @@ class ShippingUnits extends Seeder
     {
         DB::table('shipping_units')->insert([
             [
-                'name' => 'Shipping Unit 1',
+                'name' => 'Viettel Post',
                 'address' => '123 Example St, City, Country',
                 'avatar' => 'avatar1.png',
                 'price' => 100.00,
@@ -27,7 +27,7 @@ class ShippingUnits extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'name' => 'Shipping Unit 2',
+                'name' => 'Shopee Exp',
                 'address' => '456 Another St, City, Country',
                 'avatar' => 'avatar2.png',
                 'price' => 150.50,
