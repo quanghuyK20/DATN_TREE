@@ -63,6 +63,9 @@ function StoreList() {
     useEffect(() => {
         if (!!user) {
             storeApi.getStoreByAdmin(params).then((response) => {
+                console.log('====================================');
+                console.log("store-list-admin", response);
+                console.log('====================================');
                 setTotal(response.data.total)
                 setStoreList(response.data.data.map((oItem) => ({
                     id: oItem.id,

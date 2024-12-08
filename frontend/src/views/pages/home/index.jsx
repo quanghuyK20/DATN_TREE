@@ -43,9 +43,9 @@ function Home() {
     }, [])
 
     useEffect(() => {
-            setIsLoading(false);
-            setStoreList(stores)
-            setProductList(products)
+        setIsLoading(false);
+        setStoreList(stores)
+        setProductList(products)
     }, [products, stores])
 
     const responsive = {
@@ -101,16 +101,16 @@ function Home() {
     return (
         <div className="app__container">
             <div className="grid">
-               
+
                 {
                     isLoading ? (
                         <div className="loading-spinner">
                             <BeatLoader color={'#00483d'} loading={isLoading} />
                         </div>
                     ) : (
-                        
+
                         <div>
-                             <Slide />
+                            <Slide />
                             <div className='home-store'>
                                 <div className='home-store__header'>
                                     <div className='home-store__header__title'>Cửa hàng</div>
@@ -139,7 +139,7 @@ function Home() {
                                         <div className='home-flask__header__all__icon'><RightOutlined /></div>
                                     </div>
                                 </div>
-                                <Carousel responsive={responsiveSearch} className='pt-4 '>
+                                {/* <Carousel responsive={responsiveSearch} className='pt-4 '>
                                     {
                                         productList?.map((product, index) => (
                                             <FlaskSale
@@ -151,7 +151,19 @@ function Home() {
                                             />
                                         ))
                                     }
+                                </Carousel> */}
+                                <Carousel responsive={responsiveSearch} className='pt-4 '>
+                                    {productList?.map((product, index) => (
+                                        <FlaskSale
+                                            key={index}
+                                            id={product.id}
+                                            img={product.img}
+                                            name={product.name}
+                                            price={new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.price)}
+                                        />
+                                    ))}
                                 </Carousel>
+
                             </div>
 
                             <div className='home-live'>
@@ -212,7 +224,8 @@ function Home() {
                                         <div className='home-search__header__all__icon'><RightOutlined /></div>
                                     </div>
                                 </div>
-                                <Carousel responsive={responsiveSearch} className='pt-4 '>
+                                {/* HuyLQ Fix format currency 20211123 */}
+                                {/* <Carousel responsive={responsiveSearch} className='pt-4 '>
                                     {
                                         productList?.map((product, index) => (
                                             <SearchProduct
@@ -224,6 +237,17 @@ function Home() {
                                             />
                                         ))
                                     }
+                                </Carousel> */}
+                                <Carousel responsive={responsiveSearch} className='pt-4'>
+                                    {productList?.map((product, index) => (
+                                        <SearchProduct
+                                            key={index}
+                                            id={product.id}
+                                            img={product.img}
+                                            name={product.name}
+                                            price={product.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
+                                        />
+                                    ))}
                                 </Carousel>
                             </div>
 
@@ -232,8 +256,8 @@ function Home() {
                                     <div className='home-product__header__title'>GỢI Ý HÔM NAY</div>
                                 </div>
                                 <div className="home-product__contain">
-
-                                    <div className="grid__row">
+                                    {/* HuyLQ Fix format currency 20241123 */}
+                                    {/* <div className="grid__row">
                                         {
                                             productList?.map((product, index) => (
                                                 <Product
@@ -245,6 +269,17 @@ function Home() {
                                                 />
                                             ))
                                         }
+                                    </div> */}
+                                    <div className="grid__row">
+                                        {productList?.map((product, index) => (
+                                            <Product
+                                                key={index}
+                                                id={product.id}
+                                                img={product.img}
+                                                name={product.name}
+                                                price={product.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
+                                            />
+                                        ))}
                                     </div>
 
                                 </div>

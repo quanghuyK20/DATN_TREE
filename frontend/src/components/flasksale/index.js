@@ -20,7 +20,9 @@ function FlaskSale(props) {
                     className="home-flask-item__img" />
 
                 <div className='home-product-item__price'>
-                    <span className="home-product-item__price-current">{props.price}0 đ</span>
+                    {/* HuyLQ Fix format currency 20242311 */}
+                    {/* <span className="home-product-item__price-current">{props.price}0 đ</span> */}
+                    <span className="home-product-item__price-current">{props.price}</span>
                 </div>
                 <div className="home-product-item__favoure">
                     <i className="fas fa-check"></i>

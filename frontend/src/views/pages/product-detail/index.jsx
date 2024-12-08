@@ -464,10 +464,10 @@ function ProductDetail() {
                                             </div>
                                             <div className="row mt-5">
                                                 <div className='col-md-2'>
-                                                    <div className='d-flex justify-content-center'>
-                                                        <div className='product-detail__detail__rating-number'>{starMiddle}</div>
-                                                        <span className='product-detail__detail__rating-number__child'>trên 5</span>
-                                                    </div>
+                                                    {/* <div className='d-flex justify-content-center'> */}
+                                                        {/* <div className='product-detail__detail__rating-number'>{starMiddle}</div> */}
+                                                        {/* <span className='product-detail__detail__rating-number__child'>trên 5</span> */}
+                                                    {/* </div> */}
                                                     <div className="d-flex justify-content-center">
                                                         <StarOutlined className='product-detail__detail__rating-icon' />
                                                         <StarOutlined className='product-detail__detail__rating-icon' />
