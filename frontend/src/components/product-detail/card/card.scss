@@ -1,0 +1,16 @@
+.product-detail__detail {
+    background-color: #fff;
+    &__card {
+        margin-left: 2rem;
+        background-color: #fff;
+        &__contain {
+            height: 20rem;
+            &__img {
+                height: 15rem;
+                width: 18rem;  
+            }
+        }
+        
+    }
+   
+}

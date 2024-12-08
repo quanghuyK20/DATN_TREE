@@ -1,0 +1,129 @@
+.bg-cart {
+    width: 100%;
+    background-color: #f5f5f5 !important;
+    padding-top: 16rem;
+    &__content{
+        background-color: #fff;
+    }
+}
+
+.header-table__title {
+    font-size: 2.5rem;
+}
+
+// btn
+.btn-purchase__order {
+    background-color: #007966;
+    color: #fff;
+    font-size: 1.6rem;
+    width: 20rem !important;
+    right: 20px;
+}
+
+.btn-purchase__order:hover,
+.btn-purchase__order:focus
+ {
+    background-color: #00483d;
+    color: #fff;
+    font-size: 1.6rem;
+    width: 20rem !important;
+    right: 20px;
+}
+
+.payment-layout {
+    z-index: 100;
+    position: -webkit-sticky !important;
+    // position: sticky !important;
+    bottom: 0;
+}
+
+.cart-product-card {
+    width: 10rem;
+    height: 10rem;
+}
+
+
+.cart-product__price__total {
+    color: var(--favoure-color);
+}
+
+.cart-input__checkbox {
+    margin-right: 4rem;
+    margin-left: 2rem;
+}
+
+.cart-reduce__modal {
+    .ant-modal-body {
+        height: 5vh !important;
+    }
+
+    .ant-modal-title {
+        text-align: center !important;
+        font-weight: 300 !important;
+        color: rgba(0, 0, 0, 0.8);
+    }
+
+    .ant-modal-content {
+        width: 20vw;
+        height: 20vh !important;
+    }
+
+    .ant-modal-footer {
+        display: none;
+    }
+
+    .ant-modal-close-x {
+        display: none !important;
+    }
+    .cart-modal__btn {
+        margin-top: 2rem;
+    }
+
+    .btn-modal__OK {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        margin-top: 2rem;
+        width: 50%;
+    }
+
+
+    .btn-modal__Cancel {
+        background-color: var(--white-color);
+        color: var(--text-color);
+        margin-top: 2rem;
+        width: 50%;
+    }
+}
+
+.cart-increase__modal {
+    .ant-modal-body {
+        height: 5vh !important;
+    }
+
+    .ant-modal-title {
+        text-align: center !important;
+        font-weight: 300 !important;
+        color: rgba(0, 0, 0, 0.8);
+        // color: var(--favoure-color) !important;
+    }
+
+    .ant-modal-content {
+        width: 20vw;
+        height: 20vh !important;
+    }
+
+    .ant-modal-footer {
+        display: none;
+    }
+
+    .ant-modal-close-x {
+        display: none !important;
+    }
+
+    .btn-modal__OK {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        margin-top: 2rem;
+        width: 100%;
+    }
+}

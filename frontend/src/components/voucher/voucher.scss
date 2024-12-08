@@ -1,0 +1,27 @@
+.voucher-border {
+    background: radial-gradient(circle at 0 .375rem,transparent 0,rgba(0,0,0,.03) .1875rem,#fbc9c0 0,#fbc9c0 .25rem,#fff4f4 0);
+    background-size: .25rem .625rem;
+    background-repeat: repeat-y;
+}
+
+.card .voucher-border{
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    background-color: #f5e5e2;
+    margin-right: 2rem;
+}
+
+.voucher-text {
+    font-size: 1.4rem;
+}
+
+.btn-voucher {
+    background-color: var(--favoure-color);
+    color: var(--white-color);
+}
+
+.btn-voucher:hover{
+    background-color: var(--favoure-color);
+    color: var(--white-color);
+}

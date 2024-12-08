@@ -1,0 +1,20 @@
+.app__container-seach-home {
+    background-color: #F5F5F5;
+    margin-top: 20rem;
+}
+
+.home-product {
+    &__header {
+        background: #fff;
+        height: 4.75rem;
+        border-bottom: 5px solid var(--primary-color);
+        padding: 0 1.25rem;
+        display: flex;
+        &__title {
+            margin: auto;
+            font-size: 1.5rem;
+            color: var( --favoure-color);
+            font-weight: 350;
+        }
+    }
+}

@@ -191,7 +191,7 @@ class OrderReceiversController extends Controller
 
             if ($orderreceiver->deleted_at == 1) {
                 return response()->json([
-                    'message' => 'the orderreceiver was previously deleted',
+                    'message' => 'Người nhận đơn hàng trước đó đã bị xóa',
                 ], 304);
             }
 
@@ -200,7 +200,7 @@ class OrderReceiversController extends Controller
             $orderreceiver->update($input);
 
             return response()->json([
-                'message' => 'Deleted successfully',
+                'message' => 'Đã xóa thành công',
             ], 201);
 
         }catch(Exception $e){

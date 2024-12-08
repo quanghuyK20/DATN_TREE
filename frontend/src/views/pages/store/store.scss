@@ -1,0 +1,109 @@
+.bg-store {
+    width: 100%;
+    background-color: #fff !important;
+    padding-top: 16rem;
+
+}
+
+.store-detail {
+    &__shop {
+        &__container {
+            background-color: rgba(80, 72, 72, 0.6);
+            padding: 1rem;
+            width: auto;
+            height: auto;
+            border-radius: 1rem;
+        }
+        &__logo {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px #fff, 0 0 0 6px #ccc;
+            margin-left: 1rem;
+        }
+        &__active{
+            margin-left: 2rem;
+            &__icon{
+                display: inline-block;
+                width: 1rem;
+                height: 1rem;
+                border-radius: 50%;
+                background-color: #42ab17;
+                margin-right: 0.5rem;
+            }
+            &__title{
+                font-size: 2rem;
+                color: #fff;
+            }
+            &__status{
+                color: #fff;
+            }
+
+            &__btn {
+                &__shop {
+                    margin-left: 1rem;
+                    margin-top: 0.25rem;
+                }
+                &__play {
+                    margin-top: 0.25rem;
+                    margin-left: 1rem;
+                }
+            }
+            
+        }
+    }
+}
+
+.store-icon {
+    font-size: 1.5rem;
+    margin-right: 2rem;
+}
+
+.store-value {
+    margin-left: 1rem;
+    color: var(--favoure-color);
+    font-size: 1.6rem;
+}
+
+.store-product {
+    background-color: #f5f5f5;
+    &__suggest {
+        &__title {
+            padding: 2rem 0;
+            font-size: 2rem;
+        }
+    }
+}
+
+.shop-page-menu {
+    background: #fff;
+    z-index: 2;
+}
+
+// .navbar-with-more-menu--narrow {
+//     min-height: 40px
+// }
+
+.navbar-with-more-menu__items {
+    width: 100%;
+    // flex: initial;
+    display: flex;
+    justify-content: space-around;
+    // justify-content: flex-start;
+}
+
+.navbar-with-more-menu__item {
+    max-width: 16.67%;
+    // border-bottom-width: 0.125rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.navbar-with-more-menu__item:hover {
+    max-width: 16.67%;
+    // border-bottom-width: 0.125rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--favoure-color);
+}

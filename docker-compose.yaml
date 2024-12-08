@@ -1,0 +1,93 @@
+version: '3.7'
+
+services:
+  backend:
+    build:
+      args:
+        user: sammy
+        uid: 1000
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: tree-backend-huylq
+    restart: always
+    ports:
+      - 8004:8000
+    volumes:
+      - ./backend:/datn/backend
+    networks:
+      - app
+    depends_on:
+      - db
+
+  frontend:
+    ports:
+      - 3000:3000
+    tty: true
+    build:
+      context: frontend
+      target: development
+      dockerfile: Dockerfile
+    container_name: tree-frontend-huylq
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+    networks:
+      - app
+    restart: always
+  
+  chatbox:
+    ports:
+      - 9000:9000
+    tty: true
+    build:
+      context: chatbox
+      target: development
+      dockerfile: Dockerfile
+    container_name: datn-chatbox
+    volumes:
+      - ./chatbox:/app
+    networks:
+      - app
+    restart: always
+    depends_on:
+      - db 
+  socket:
+    ports:
+      - 8900:8900
+    tty: true
+    build:
+      context: socket
+      target: development
+      dockerfile: Dockerfile
+    container_name: tree-socket
+    volumes:
+      - ./socket:/app
+    networks:
+      - app
+    restart: always
+    depends_on:
+      - db 
+
+  db:
+    image: mysql:8.0.30
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: tree_huylq
+      MYSQL_ROOT_PASSWORD: rootroot
+      MYSQL_ROOT_HOST: '%'
+      SERVICE_NAME: mysql
+    container_name: datn-db
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - app
+    ports:
+      - 8001:3306
+  
+volumes:
+  mysql_data:
+
+networks:
+  app:
+    driver: bridge
