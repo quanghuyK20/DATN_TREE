@@ -16,7 +16,7 @@ function Footer() {
                                 <a href="" className="footer-item__link">Trung tâm trợ giúp</a>
                             </li>
                             <li className="footer-item">
-                                <a href="" className="footer-item__link">BONSAI Blog</a>
+                                <a href="" className="footer-item__link">Blog</a>
                             </li>
                             <li className="footer-item">
                                 <a href="" className="footer-item__link">Hướng Dẫn Mua Hàng</a>
@@ -30,13 +30,13 @@ function Footer() {
                         <h3 className="footer__heading">Giới thiệu</h3>
                         <ul className="footer-list">
                             <li className="footer-item">
-                                <a href="" className="footer-item__link">Giới Thiệu Về BONSAI Việt Nam</a>
+                                <a href="" className="footer-item__link">Giới Thiệu Về HyTree</a>
                             </li>
                             <li className="footer-item">
                                 <a href="" className="footer-item__link">Tuyển Dụng</a>
                             </li>
                             <li className="footer-item">
-                                <a href="" className="footer-item__link">Điều Khoản BONSAI</a>
+                                <a href="" className="footer-item__link">Điều Khoản</a>
                             </li>
                             <li className="footer-item">
                                 <a href="" className="footer-item__link">Chính Sách Bảo Mật</a>
@@ -47,7 +47,7 @@ function Footer() {
                         <h3 className="footer__heading">Danh mục</h3>
                         <ul className="footer-list">
                             <li className="footer-item">
-                                <a href="" className="footer-item__link">Giới Thiệu Về BONSAI Việt Nam</a>
+                                <a href="" className="footer-item__link">Giới Thiệu Về HyTree</a>
                             </li>
                             <li className="footer-item">
                                 <a href="" className="footer-item__link">Tuyển Dụng</a>

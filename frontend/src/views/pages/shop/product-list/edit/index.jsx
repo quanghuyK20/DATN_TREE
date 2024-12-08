@@ -55,9 +55,6 @@ function EditProduct() {
     useEffect(() => {
         if (id) {
             productApi.getProductById(id).then((response) => {
-                console.log('====================================');
-                console.log("Edit product", response);
-                console.log('====================================');
                 const product = {
                     id: response.data[0].id,
                     name: response.data[0].product_name,

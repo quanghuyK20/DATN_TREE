@@ -595,7 +595,7 @@ function Payment() {
                         <div className="d-flex justify-content-between">
                             <div className="d-flex">
                                 <GiftOutlined className="payment-voucher__title__icon"/>
-                                <div className="payment-shipper__title__text">Bonsai Voucher :</div>
+                                <div className="payment-shipper__title__text">Voucher :</div>
                             </div>
                             <Link className="payment-shipper__title__link" onClick={()=> setIsShowModalVoucher(true)}>Voucher</Link>
                         </div>

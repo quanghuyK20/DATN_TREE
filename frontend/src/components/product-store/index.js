@@ -1,7 +1,7 @@
 import React from 'react'
-import {useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { HeartOutlined, StarOutlined } from '@ant-design/icons'
-import * as defaultUrl from 'shared/constants/defaultImageUrl' 
+import * as defaultUrl from 'shared/constants/defaultImageUrl'
 import '../header/baseHeader.scss'
 import './product-store.scss'
 
@@ -10,7 +10,7 @@ function ProductStore(props) {
     const navigate = useNavigate()
     const onClickHandler = (productId) => navigate(`/product-detail/${productId}`)
     return (
-        <div className="grid-column-2-4" 
+        <div className="grid-column-2-4"
             onClick={() => onClickHandler(props.id)}
         >
             <div className="home-product-item">
@@ -20,8 +20,13 @@ function ProductStore(props) {
                     className="home-product-item__img" />
                 <h4 className="home-product-item__name">{props.name}</h4>
                 <div className="home-product-item__price">
+                    {/* HuyLQ Fix format currency 20242311 */}
                     <span className="home-product-item__price-old">{props.price}0 đ</span>
-                    <span className="home-product-item__price-current">999000 đ</span>
+                    {/* <span className="home-product-item__price-old">
+                        {Number(props.price).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
+                    </span> */}
+
+                    <span className="home-product-item__price-current">999.000 đ</span>
                 </div>
                 <div className="home-product-item__action">
                     <span className="home-product-item__like home-product-item__like--liked">
