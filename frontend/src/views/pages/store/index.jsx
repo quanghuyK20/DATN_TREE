@@ -315,7 +315,7 @@ function Store() {
                                                 key={index}
                                                 id={product.id}
                                                 img={product.img}
-                                                name={product.name}
+                                                name={product.product_name}
                                                 price={product.price}
                                             />
                                         ))}
@@ -332,7 +332,7 @@ function Store() {
                                         key={index}
                                         id={product.id}
                                         img={product.img}
-                                        name={product.name}
+                                        name={product.product_name}
                                         price={product.price}
                                     />
                                 ))}

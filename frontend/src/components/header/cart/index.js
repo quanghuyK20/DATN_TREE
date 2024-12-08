@@ -76,8 +76,6 @@ function Cart() {
                                                         <span className="header__cart-item-price">
                                                             {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product?.product.price)}
                                                         </span>
-
-
                                                         <span className="header__cart-item-multy">x</span>
                                                         <span className="header__cart-item-qtn">{product.amount}</span>
                                                     </div>

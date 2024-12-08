@@ -6,7 +6,7 @@ function Slide(props) {
     const items = [
         { title: '', image: process.env.REACT_APP_API_URL + 'images/slide-home/1.png' },
         { title: '', image: process.env.REACT_APP_API_URL + 'images/slide-home/2.png'  },
-        { title: '', image:  process.env.REACT_APP_API_URL + 'images/slide-home/3.png' },
+        // { title: '', image:  process.env.REACT_APP_API_URL + 'images/slide-home/3.png' },
     ];
     return (
         <div>
