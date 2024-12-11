@@ -17,6 +17,7 @@ class CreateProductDetailsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
+            $table->string('style')->nullable();;
             $table->string('desc_detail');
             $table->string('img_1',255)->nullable();
             $table->string('img_2',255)->nullable();

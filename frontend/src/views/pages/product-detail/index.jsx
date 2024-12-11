@@ -64,7 +64,7 @@ function ProductDetail() {
     },[id,loading,productDetail,feedbacksByProductId])
 
     useEffect(()=>{
-        dispatch(getStoreInfoById(productDetail.store_id))
+        dispatch(getStoreInfoById(productDetail?.store_id))
     },[productDetail])
 
     useEffect(()=>{
@@ -444,7 +444,7 @@ function ProductDetail() {
                                                 Mô tả sản phẩm : {product.desc}
                                             </p>
                                             <p className='content-description'>
-                                                Mô tả style bonsai : {product.category_detail}
+                                                Chi tiết kiểu dáng : {product.category_detail}
                                             </p>
                                              {/* <p className='content-description'>
                                                 Cách trồng hoa giấy ngũ sắc khi mới mua về: Khi mới mua về tùy thuộc vào tình trạng của cây mà có những cách chăm sóc cụ thể khác nhau. Tuy nhiên phần lớn khi vận chuyển cây do trong hộp nhiều ngày sẽ thiếu nắng, nước nên có hiện tượng nhăn lá. Bạn chỉ cần để cây ra chỗ thoáng mát 4-5 tiếng để cây hồi lại tránh đem ra trời nắng luôn kẻo bị sốc nhiệt, sau đó mới tiến hành trồng cây, chế độ tưới chăm sóc bình thường.

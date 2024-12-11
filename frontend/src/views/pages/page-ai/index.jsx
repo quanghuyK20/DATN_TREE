@@ -15,6 +15,7 @@ function PageAi() {
     const [imageDetect, setImageDetect] = useState(logo);
     const [result, setResult] = useState('');
     const [category, setCategory] = useState({
+        style: '',
         name_jp: '',
         name_vn: '',
         detail: '',
@@ -23,7 +24,7 @@ function PageAi() {
     const [isLoading, setIsLoading] = useState(false);
 
     const handleImageChange = (event) => {
-        setCategory({ name_jp: '', name_vn: '', detail: '', products: [{}] })
+        setCategory({ style: '', name_jp: '', name_vn: '', detail: '', products: [{}] })
         setResult('')
         const selectedImage = event.target.files[0];
         const fileName = selectedImage.name
@@ -72,6 +73,7 @@ function PageAi() {
                     })
                     productApi.getProductByCategory(dt).then((res) => {
                         setCategory({
+                            style: res.data.style,
                             name_jp: res.data.name_jp,
                             name_vn: res.data.name_vn,
                             detail: res.data.detail,
@@ -82,7 +84,7 @@ function PageAi() {
                 }).catch((err) => {
                     setIsLoading(false);
                     alert(
-                        "We cannot regconize this file! Maybe it's not in our collections :(("
+                        "Chúng tôi không thể nhận diện được tệp này! Có thể tệp này không nằm trong bộ sưu tập của chúng tôi!"
                     )
                     setImageDetect(logo)
                     setResult('')
@@ -125,7 +127,7 @@ function PageAi() {
                     </div>
                 </div>
                 <div className="btn-page-ai">
-                    <Button htmlType="submit" id="custom-btn">Detect style bonsai</Button>
+                    <Button htmlType="submit" id="custom-btn">Tìm cây có cùng kiểu dáng</Button>
                 </div>
             </form>
             {
@@ -139,7 +141,7 @@ function PageAi() {
                             result !== '' ? (
                                 <div className='container mt-5'>
                                     <div className='product-category'>
-                                        <h1>{category.name_jp} - </h1>
+                                        {/* <h1>{category.name_jp} - </h1> */}
                                         <h1>{category.name_vn}</h1>
                                     </div>
                                     <div className='product-content'>

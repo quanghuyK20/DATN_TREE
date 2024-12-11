@@ -1,4 +1,4 @@
-* Laravel 
+* Laravel
 
 php artisan make:model SurveyQuestionAnswer -m
 
@@ -26,3 +26,5 @@ php artisan migrate:fresh --seed
 
 Cài đặt Socialite:
 - composer require laravel/socialite
+
+php artisan db:seed --class=ProductSeeder

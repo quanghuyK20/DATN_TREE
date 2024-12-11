@@ -24,6 +24,7 @@ class ProductCategoryRequest extends FormRequest
     public function rules()
     {
         return [
+            'style'=> ['required', 'string', 'unique:product_categories,style'],
             'name_jp'=> ['required', 'string', 'unique:product_categories,name_jp'],
             'name_vn'=> ['required', 'string', 'unique:product_categories,name_vn'],
             'detail'=> ['required', 'string']

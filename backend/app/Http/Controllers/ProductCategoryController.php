@@ -19,7 +19,7 @@ class ProductCategoryController extends Controller
         $this->productCategoryRepository = $productCategoryRepository;
     }
 
-    
+
     public function index()
     {
         try{
@@ -30,8 +30,8 @@ class ProductCategoryController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };   
-       
+        };
+
     }
 
     /**
@@ -55,8 +55,8 @@ class ProductCategoryController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };   
-        
+        };
+
     }
 
     /**
@@ -75,16 +75,16 @@ class ProductCategoryController extends Controller
                     'message' => 'ProductCategory not found!',
                 ], 404);
             }
-    
+
             return response()->json($productCategory);
         }catch(Exception $e){
             return response()->json([
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };   
-       
-       
+        };
+
+
     }
 
     public function showByName(Request $request)
@@ -92,14 +92,14 @@ class ProductCategoryController extends Controller
         try{
 
             $name = $request->name;
-            $productCategory = ProductCategory::where('name_jp', $name)->first();
-
+            // $productCategory = ProductCategory::where('name_jp', $name)->first();
+            $productCategory = ProductCategory::where('style', $name)->first();
             if ($productCategory === null) {
                 return response()->json([
                     'message' => 'ProductCategory not found!',
                 ], 404);
             }
-    
+
             return response()->json(new ProductCategoryResource($productCategory));
 
         }catch(Exception $e){
@@ -107,9 +107,9 @@ class ProductCategoryController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };   
-       
-       
+        };
+
+
     }
 
     /**
@@ -129,11 +129,11 @@ class ProductCategoryController extends Controller
                     'message' => 'ProductCategory not found',
                 ], 404);
             }
-    
+
             $input = $request->all();
-    
+
             $productCategory->update($input);
-    
+
             return response()->json([
                 'message' => 'Update productCategory successfully',
                 'productCategory' => new ProductCategoryResource($productCategory),
@@ -143,8 +143,8 @@ class ProductCategoryController extends Controller
                 'message' => 'Something went wrong!',
                 'error' => $e,
             ],500);
-        };   
-       
+        };
+
     }
 
     /**

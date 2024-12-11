@@ -9,7 +9,7 @@ class ProductDetail extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['product_id','desc_detail','img_1','img_2','img_3','img_4'];
+    protected $fillable = ['product_id', 'style', 'desc_detail','img_1','img_2','img_3','img_4'];
 
     public function product(){
         return $this->belongsTo(Product::class);
