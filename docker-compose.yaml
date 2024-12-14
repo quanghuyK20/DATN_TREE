@@ -15,7 +15,7 @@ services:
     volumes:
       - ./backend:/datn/backend
     networks:
-      - app
+      - datn_tree_app
     depends_on:
       - db
 
@@ -33,7 +33,7 @@ services:
     depends_on:
       - backend
     networks:
-      - app
+      - datn_tree_app
     restart: always
   
   chatbox:
@@ -48,7 +48,7 @@ services:
     volumes:
       - ./chatbox:/app
     networks:
-      - app
+      - datn_tree_app
     restart: always
     depends_on:
       - db 
@@ -64,7 +64,7 @@ services:
     volumes:
       - ./socket:/app
     networks:
-      - app
+      - datn_tree_app
     restart: always
     depends_on:
       - db 
@@ -81,7 +81,7 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
-      - app
+      - datn_tree_app
     ports:
       - 8001:3306
   
@@ -89,5 +89,5 @@ volumes:
   mysql_data:
 
 networks:
-  app:
+  datn_tree_app:
     driver: bridge

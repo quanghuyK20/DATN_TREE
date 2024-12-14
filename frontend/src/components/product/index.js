@@ -43,7 +43,7 @@ function Product(props) {
                     <span className="home-product-item__sold">Đã bán 88</span>
                 </div>
                 <div className="home-product-item__origin">
-                    <span className="home-product-item__brand">TvaT</span>
+                    <span className="home-product-item__brand">HuyTree</span>
                     <span className="home-product-item__origin-name">Việt Nam</span>
                 </div>
                 <div className="home-product-item__favoure">
