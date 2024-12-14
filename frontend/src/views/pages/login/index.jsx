@@ -56,7 +56,8 @@ function Login() {
     useEffect(()=>{
         function start(){
             gapi.client.init({
-                clientId: '348455066010-71i65326dpjs2f7vjk9t2d9farqd8lvg.apps.googleusercontent.com',
+                // clientId: '348455066010-71i65326dpjs2f7vjk9t2d9farqd8lvg.apps.googleusercontent.com',
+                clientId: '930708777668-6fsosi735h8nh06mk6m2lrnd6ktaeoov.apps.googleusercontent.com',
                 scope: "profile email"
             })
         };
@@ -226,7 +227,8 @@ function Login() {
                             </div>
                             <GoogleLogin
                                     className="button-google"
-                                    clientId="348455066010-71i65326dpjs2f7vjk9t2d9farqd8lvg.apps.googleusercontent.com"
+                                    // clientId="348455066010-71i65326dpjs2f7vjk9t2d9farqd8lvg.apps.googleusercontent.com"
+                                    clientId='930708777668-6fsosi735h8nh06mk6m2lrnd6ktaeoov.apps.googleusercontent.com'
                                     buttonText="Login with Google"
                                     onSuccess={handleGoogleLoginSuccess}
                                     onFailure={handleGoogleLoginFailure}

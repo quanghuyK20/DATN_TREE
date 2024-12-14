@@ -13,7 +13,7 @@ RUN npm run
 
 COPY . .
 
-EXPOSE 8900
+EXPOSE 8901
 
 # Running the app
 CMD "npm" "run" "start"

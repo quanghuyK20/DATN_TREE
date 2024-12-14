@@ -324,7 +324,7 @@ function Store() {
                             )}
 
                             <div className="row mt-5">
-                                <img src={process.env.REACT_APP_API_URL + 'images/stores/2-min.png'} alt='store-baner'></img>
+                                <img src={process.env.REACT_APP_API_URL + 'images/stores/store_bk.png'} alt='store-baner'></img>
                             </div>
                             <div className="grid__row mt-5">
                                 {productList.slice(5, productList.lenght)?.map((product, index) => (

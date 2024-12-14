@@ -1,4 +1,4 @@
-const io = require("socket.io")(8900, {
+const io = require("socket.io")(8901, {
   cors: {
     origin: "http://localhost:3000",
     methods: ['GET', 'POST'],
@@ -49,10 +49,6 @@ io.on("connection", (socket) => {
       text,
     });
   });
-
-console.log('====================================');
-console.log(receiverId);
-console.log('====================================');
 
   //when disconnect
   socket.on("disconnect", () => {

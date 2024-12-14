@@ -115,7 +115,7 @@
         <!-- Footer with date and contact info -->
         <div class="footer">
             <p>Ngày {{ date('d-m-Y') }}</p>
-            <p>Email: support@hytree.com | Website: <a href="https://hytree.com" style="color: #ffffff;">www.hytree.com</a></p>
+            <p>Email: support@hytree.com | Website: <a href="https://hytreedn.id.vn" style="color: #ffffff;">hytreedn.id.vn</a></p>
         </div>
     </div>
 </body>
